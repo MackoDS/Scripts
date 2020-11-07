@@ -1,0 +1,19 @@
+# python3
+
+# skrypt zastępuje wielokrotne spacje, tabulatory oraz znaki nowej linii jedną spacją
+
+fin = open("d:\Maciej\zad_dla_ludu\WORD\\tekst.txt", "rt")
+fout = open("d:\Maciej\zad_dla_ludu\WORD\\poprawiony_tekst.txt", "wt")
+
+f = fin.read()
+
+copyb = bytes(f, 'utf8')
+copyb = copyb.replace(b'\n', b' ')
+copyb = copyb.replace(b'\t', b' ')
+f = str(copyb, 'utf8')
+
+
+fout.write(' '.join(f.split()))
+
+fin.close()
+fout.close()
